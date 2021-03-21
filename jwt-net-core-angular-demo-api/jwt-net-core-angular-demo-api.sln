@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jwt-net-core-angular-demo-api", "jwt-net-core-angular-demo-api\jwt-net-core-angular-demo-api.csproj", "{DF064363-CE87-4FF0-B4D6-039410843706}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF064363-CE87-4FF0-B4D6-039410843706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF064363-CE87-4FF0-B4D6-039410843706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF064363-CE87-4FF0-B4D6-039410843706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF064363-CE87-4FF0-B4D6-039410843706}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37AB7C42-2C45-447C-BD7C-BF04B3F83642}
+	EndGlobalSection
+EndGlobal

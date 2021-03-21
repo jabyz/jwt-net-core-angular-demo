@@ -1,0 +1,180 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <img src="/assets/img/single_user.png" class="mx-auto d-block">
+    </div>
+
+    <form
+      [formGroup]="service.formModel"
+      autocomplete="off"
+      (submit)="register()"
+    >
+      <!-- Modal body -->
+      <div class="modal-body">
+        <label>UserName:</label>
+        <div class="input-group mb-1">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter UserName"
+            required="required"
+            formControlName="UserName"
+          />
+        </div>
+        <label
+          class="text-danger"
+          *ngIf="
+            service.formModel.get('UserName')!.touched &&
+            service.formModel.get('UserName').errors?.required
+          "
+        >
+          This field is mandatory
+        </label>
+
+        <div class="mb-1"></div>
+
+        <label>Email:</label>
+        <div class="input-group mb-1">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Email"
+            required="required"
+            formControlName="Email"
+          />
+        </div>
+        <label
+          class="text-danger"
+          *ngIf="
+            service.formModel.get('Email')!.touched &&
+            service.formModel.get('Email').errors?.email
+          "
+        >
+          Invalid email address
+        </label>
+
+        <div class="mb-1"></div>
+
+        <label>FirstName:</label>
+        <div class="input-group mb-1">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter FirstName"
+            formControlName="FirstName"
+          />
+        </div>
+
+        <label>LastName:</label>
+        <div class="input-group mb-1">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter LastName"
+            formControlName="LastName"
+          />
+        </div>
+
+        <div formGroupName="Passwords">
+          <label>Password:</label>
+          <div class="input-group mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="bi bi-key"></i></span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Enter Password"
+              formControlName="Password"
+            />
+          </div>
+          <label
+            class="text-danger"
+            *ngIf="
+              service.formModel.get('Passwords.Password')!.touched &&
+              service.formModel.get('Passwords.Password').errors?.required
+            "
+          >
+            This field is mandatory
+          </label>
+          <label
+            class="text-danger"
+            *ngIf="
+              service.formModel.get('Passwords.Password')!.touched &&
+              service.formModel.get('Passwords.Password').errors?.minlength
+            "
+          >
+            Minimum 4 characters is required
+          </label>
+          <div class="mb-1"></div>
+
+          <label>Confirm Password:</label>
+          <div class="input-group mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="bi bi-key"></i></span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Confirm Password"
+              required="required"
+              formControlName="ConfirmPassword"
+            />
+          </div>
+          <label
+            class="text-danger"
+            *ngIf="
+              service.formModel.get('Passwords.ConfirmPassword')!.touched &&
+              service.formModel.get('Passwords.ConfirmPassword').errors
+                ?.required
+            "
+          >
+            This field is mandatory
+          </label>
+          <label
+            class="text-danger"
+            *ngIf="
+              service.formModel.get('Passwords.ConfirmPassword')!.touched &&
+              service.formModel.get('Passwords.ConfirmPassword').errors
+                ?.passwordMismatch
+            "
+          >
+            Password does not match
+          </label>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button
+          type="submit"
+          class="btn btn-info btn-block"
+          [disabled]="!service.formModel.valid"
+        >
+          <i class="bi bi-box-arrow-in-right"></i>
+          Create New Account
+        </button>
+
+        <div class="col text-center">
+          <button (click)="login()" class="btn btn-sm btn-success">
+            <i class="bi bi-box-arrow-in-right"></i>
+            Login
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
